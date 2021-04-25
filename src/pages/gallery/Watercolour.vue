@@ -171,7 +171,7 @@ Art Hover Styles
 
 .container {
   position: relative;
-  width: 50%;
+  width: 100%;
   box-shadow: 2px 2px 10px 0px rgba(68, 68, 68, .4);
 }
 

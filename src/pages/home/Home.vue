@@ -83,7 +83,7 @@
             send me an email with your request and I'll give you a price.
           </p>
           <div class="row">
-            <button>Contact Me</button>
+            <router-link to="/contact"><button>Contact Me</button></router-link>
           </div>
         </div>
       </div>
