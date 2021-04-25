@@ -86,6 +86,9 @@ import SlideTransition from '../../components/Layout/SlideTransition'
 
 export default {
   name: 'Contact',
+  title () {
+    return `Megan Nancy Jane Art — Contact`
+  },
   data () {
     return {
       insta: faInstagram,

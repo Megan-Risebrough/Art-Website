@@ -88,6 +88,9 @@ import SlideTransition from '../../components/Layout/SlideTransition'
 
 export default {
   name: 'Watercolour',
+  title () {
+    return `Megan Nancy Jane Art — Digital`
+  },
   data() {
     return {
       index: null,

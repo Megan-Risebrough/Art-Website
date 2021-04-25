@@ -39,6 +39,9 @@ import SlideTransition from '../../components/Layout/SlideTransition'
 
 export default {
   name: 'Gallery',
+  title () {
+    return `Megan Nancy Jane Art — Gallery`
+  },
   data () {
     return {
       myIcon: faCaretDown

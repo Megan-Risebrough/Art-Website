@@ -139,6 +139,9 @@ AOS.init({
 
 export default {
   name: 'Home',
+  title () {
+    return `Megan Nancy Jane Art — Home`
+  },
   data () {
     return {
       insta: faInstagram,

@@ -34,13 +34,13 @@ const router = new VueRouter({
     },
     {
       path: '/digital',
-      name: 'digital',
+      name: 'Digital',
       component: Digital,
       meta: { scrollToTop: true }
     },
     {
       path: '/acrylic',
-      name: 'acrylic',
+      name: 'Acrylic',
       component: Acrylic,
       meta: { scrollToTop: true }
     },

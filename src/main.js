@@ -12,31 +12,28 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-
-
 library.add(faBars)
 
 import VueSmoothScroll from 'vue2-smooth-scroll'
-
 Vue.use(VueSmoothScroll, {
   duration: 600,
   updateHistory: false,
 })
 
+import titleMixin from './mixins/titleMixin'
+Vue.mixin(titleMixin)
+
 
 import HeroHeader from './components/Layout/HeroHeader'
-
 Vue.use(HeroHeader)
 
 
 import { gsap } from "gsap"
-
 Vue.use(gsap)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 import VuePageTransition from 'vue-page-transition'
-
 Vue.use(VuePageTransition)
 
 Vue.use(BootstrapVue)
