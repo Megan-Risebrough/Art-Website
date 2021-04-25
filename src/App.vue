@@ -11,6 +11,9 @@ import TopNavNew from './components/Layout/TopNavNew'
 import PageFooter from './components/Layout/PageFooter'
 
 export default {
+  title () {
+    return `Megan Nancy Jane Art — Home`
+  },
   components: {
     TopNavNew,
     PageFooter
