@@ -13,9 +13,6 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 
-import VueRouter from 'vue-router'
-
-Vue.use(VueRouter)
 
 library.add(faBars)
 

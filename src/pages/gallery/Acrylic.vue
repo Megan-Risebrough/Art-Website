@@ -11,7 +11,7 @@
       <div class="row">
         <div class="column">
           <div class="container" @click="toggler = !toggler">
-            <img src='./images/acrylic/eye.png' alt=""/>
+            <img src='./images/acrylic/eye.jpg' alt=""/>
             <div class="overlay">
               <div class="text1">
                 <h2>Eye</h2>
@@ -33,7 +33,7 @@
         <div class="column">
           <img src='./images/dark-grey.png' aria-hidden="true" alt=""/>
           <div class="container" @click="toggler = !toggler">
-            <img src='./images/acrylic/Rosa.png' alt=""/>
+            <img src='./images/acrylic/Rosa.jpg' alt=""/>
             <div class="overlay">
               <div class="text1">
                 <h2>Rosa Diaz</h2>
@@ -69,9 +69,9 @@
         <FsLightbox
           :toggler="toggler"
           :sources="[
-          require('./images/acrylic/eye.png'),
+          require('./images/acrylic/eye.jpg'),
           require('./images/acrylic/butterfly.jpg'),
-          require('./images/acrylic/Rosa.png'),
+          require('./images/acrylic/Rosa.jpg'),
           require('./images/acrylic/tractor.jpg'),
           require('./images/acrylic/mouth.jpg'),
           ]"

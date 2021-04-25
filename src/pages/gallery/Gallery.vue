@@ -19,12 +19,12 @@
           <img src="./images/watercolour.jpg" aria-hidden="true" alt="" />
         </div></router-link>
         <router-link to="/acrylic"><div class="medium" data-aos="fade-left" data-aos-once="true">
-          <img src="./images/acrylic.png" aria-hidden="true" alt="" />
+          <img src="./images/acrylic.jpg" aria-hidden="true" alt="" />
           <h1 id="lighter">Acrylic</h1>
         </div></router-link>
         <router-link to="/digital"><div class="medium" data-aos="fade-right" data-aos-once="true">
           <h1>Digital</h1>
-          <img src="./images/digital.png" aria-hidden="true" alt="" />
+          <img src="./images/digital.jpg" aria-hidden="true" alt="" />
         </div></router-link>
       </div>
     </div>

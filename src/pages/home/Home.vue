@@ -276,7 +276,7 @@ Hero Header Styles
 
   #hero {
     height: 100vh;
-    background-image: url('images/hero.png');
+    background-image: url('images/hero.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -500,8 +500,7 @@ About Styles
   #about {
     display: flex;
     background: #353535;
-    /*background: linear-gradient(180deg, rgba(0, 67, 101, 0) 30%, #F6EA72 30%);*/
-    background-image: url("images/about.png");
+    background-image: url("images/about.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom left;
