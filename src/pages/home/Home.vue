@@ -296,6 +296,7 @@ Hero Header Styles
     position: absolute;
     width: 100vw;
     height: 60vh;
+    max-width: 1040px;
     left: -100px;
     bottom: 0;
     z-index: 0;

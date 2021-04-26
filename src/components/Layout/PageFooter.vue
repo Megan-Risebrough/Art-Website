@@ -89,7 +89,7 @@ export default {
         left: 0px;
         bottom: 0px;
         width: 100%;
-        z-index: 1000;
+        z-index: 100;
     }
     footer .row {
         padding: 2.5em;
