@@ -473,15 +473,15 @@ Commissions Styles
     box-shadow: none;
   }
   #commissions button {
-    transition: 1s;
+    transition: 0.75s;
     background: #A3FFF9;
     border: none;
     border-radius: 10px;
     padding: 0.5em 1em;
   }
   #commissions button:hover {
-    color: #bee9ff;
-    border-color: #004365;
+    color: white;
+    background-color: #353535;
     -webkit-animation: action 1s infinite alternate;
     animation: action 1s infinite alternate;
   }
