@@ -26,7 +26,7 @@
           Hi, I am Megan Risebrough, a freelance artist who works in several
           mediums as shown below. Feel free to check out my work in each medium and
           if you like what you see, I am available for commission. Contact me by
-          email in the contact page or checkout my etsy here.
+          email in the contact page or checkout my etsy <a href="https://www.etsy.com/ca/shop/MNJaRtz?ref=profile_header" target="blank">here</a>.
         </p>
       </div>
     </div>
@@ -37,7 +37,7 @@
           <span class="med-icon"><font-awesome-icon :icon="water" /></span>
           <h3>Watercolour</h3>
           <p>
-            I have been working with watercolour for about 6 years now. I use a
+            I have been working with watercolour for about {{ new Date().getFullYear() - 2015 }} years now. I use a
             semi-realistic style, paired with black outlines and texture.
           </p>
           </router-link>
@@ -47,7 +47,7 @@
           <span class="med-icon"><font-awesome-icon :icon="palette" /></span>
           <h3>Acrylic</h3>
           <p>
-            I have been working with acrylics for about 8 years now. I use a
+            I have been working with acrylics for about {{ new Date().getFullYear() - 2013 }} years now. I use a
             realism style by utilizing the blending quality of the paints. I
             prefer painting on rocks and think they make the perfect gift.
           </p>
@@ -58,7 +58,7 @@
           <span class="med-icon"><font-awesome-icon :icon="laptop" /></span>
           <h3>Digital</h3>
           <p>
-            I have been working digitally for about 6 years now. I use various
+            I have been working digitally for about {{ new Date().getFullYear() - 2016 }} years now. I use various
             styles as this medium is very versatile. My two prominent styles are
             realism and comic-like.
           </p>
@@ -204,9 +204,11 @@ General Page Styles
   :root {
     --lightcyan: #A3FFF9;
   }
+
   #main {
     overflow-x: hidden;
   }
+
   /*Heading Styles */
   h1 {
     font-family: 'Source Serif Pro', serif;
@@ -333,6 +335,9 @@ Introduction Styles
   #intro h2 {
     padding: 0;
     margin: 0;
+  }
+  #intro p>a {
+    color: #A3FFF9;
   }
 
   /* Socials Styles */

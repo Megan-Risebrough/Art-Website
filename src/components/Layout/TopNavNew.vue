@@ -111,6 +111,7 @@ General Styles
     #contain {
         margin: 0 1em;
         width: 100%;
+        max-width: 1024px;
     }
 
     .main-nav {

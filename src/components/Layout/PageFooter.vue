@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div>
-                <p>Copyright &#169; 2020 MNJaRt - All Rights Reserved.</p>
+                <p>Copyright &#169; {{new Date().getFullYear()}} MNJaRt - All Rights Reserved.</p>
                 <p>Website designed and developed by Megan Risebrough</p>
             </div>
         </div>
