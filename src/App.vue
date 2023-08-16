@@ -1,7 +1,7 @@
 <template>
- <div id="main">
+  <div id="main">
     <TopNavNew></TopNavNew>
-    <router-view/>
+    <router-view />
     <page-footer></page-footer>
   </div>
 </template>
@@ -11,7 +11,7 @@ import TopNavNew from './components/Layout/TopNavNew'
 import PageFooter from './components/Layout/PageFooter'
 
 export default {
-  title () {
+  title() {
     return `Megan Nancy Jane Art — Home`
   },
   components: {
@@ -20,3 +20,7 @@ export default {
   }
 };
 </script>
+
+<style>
+@import './assets/css/styles.css';
+</style>

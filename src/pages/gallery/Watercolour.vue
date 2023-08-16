@@ -1,99 +1,79 @@
 <template>
-    <div id="water">
-      <slide-transition></slide-transition>
-      <hero-header
-        title="Watercolour"
-        image='./images/header.jpg'
-        :style="{ background: `linear-gradient(to bottom, rgba(102, 251, 233, 0.47), rgba(102, 251, 233, 0.47)),` + 'url(' + require('./images/watercolour.jpg') + ')',
-        backgroundPosition: 'center center',
-        backgroundSize: 'cover' }">
-      </hero-header>
-      <div class="row">
-        <div class="column">
-          <div class="container" @click="toggler = !toggler">
-            <img src='./images/watercolour/doggo.jpg' alt=""/>
-            <div class="overlay">
-              <div class="text1">
-                <h2>Golden Retriever</h2>
-                <h3>2019-08-15</h3>
-              </div>
-            </div>
-          </div>
-          <img src='./images/cyan.png' aria-hidden="true" alt=""/>
-          <div class="container" @click="toggler = !toggler">
-            <img src='./images/watercolour/spider.jpg' alt=""/>
-            <div class="overlay">
-              <div class="text1">
-                <h2>Miles Morales</h2>
-                <h3>2019-10-27</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column">
-          <img src='./images/dark-grey.png' aria-hidden="true" alt=""/>
-          <div class="container" @click="toggler = !toggler">
-            <img src='./images/watercolour/yoda.jpg' alt=""/>
-            <div class="overlay">
-              <div class="text1">
-                <h2>Yoda</h2>
-                <h3>2020-04-19</h3>
-              </div>
-            </div>
-          </div>
-          <img src='./images/black.png' aria-hidden="true" alt=""/>
-        </div>
-        <div class="column">
-          <div class="container" @click="toggler = !toggler">
-            <img src='./images/watercolour/ironman.jpg' alt=""/>
-            <div class="overlay">
-              <div class="text1">
-                <h2>Iron Man</h2>
-                <h3>2019-08-01</h3>
-              </div>
-            </div>
-          </div>
-          <img src='./images/light-grey.png' aria-hidden="true" alt=""/>
-          <div class="container" @click="toggler = !toggler">
-            <img src='./images/watercolour/turtle.jpg' alt=""/>
-            <div class="overlay">
-              <div class="text1">
-                <h2>Sea Turtle</h2>
-                <h3>2020-02-15</h3>
-              </div>
+  <div id="water">
+    <slide-transition></slide-transition>
+    <hero-header title="Watercolour" image='./images/header.jpg' :style="{
+      background: `linear-gradient(to bottom, rgba(102, 251, 233, 0.47), rgba(102, 251, 233, 0.47)),` + 'url(' + require('./images/watercolour/turtle.jpg') + ')',
+      backgroundPosition: 'center center',
+      backgroundSize: 'cover !important'
+    }">
+    </hero-header>
+    <div class="row">
+      <div class="column">
+        <div class="container" @click="openLightboxOnSlide(img.id)" v-for="img in filteredItems(1, 3)" :key="img.id">
+          <img :src='require(`./images/watercolour/${img.image}`)' alt="" />
+          <div class="overlay">
+            <div class="text1">
+              <h2 class="mb-0">{{ img.name }}</h2>
+              <h3>{{ img.date }}</h3>
             </div>
           </div>
         </div>
       </div>
-      <div class="photos">
-        <FsLightbox
-          :toggler="toggler"
-          :sources="[
-          require('./images/watercolour/doggo.jpg'),
-          require('./images/watercolour/turtle.jpg'),
-          require('./images/watercolour/spider.jpg'),
-          require('./images/watercolour/yoda.jpg'),
-          require('./images/watercolour/ironman.jpg'),
-          ]"
-        />
+      <div class="column">
+        <div class="container" @click="openLightboxOnSlide(img.id)" v-for="img in filteredItems(2, 3)" :key="img.id">
+          <img :src='require(`./images/watercolour/${img.image}`)' alt="" />
+          <div class="overlay">
+            <div class="text1">
+              <h2 class="mb-0">{{ img.name }}</h2>
+              <h3>{{ img.date }}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="container" @click="openLightboxOnSlide(img.id)" v-for="img in filteredItems(3, 3)" :key="img.id">
+          <img :src='require(`./images/watercolour/${img.image}`)' alt="" />
+          <div class="overlay">
+            <div class="text1">
+              <h2 class="mb-0">{{ img.name }}</h2>
+              <h3>{{ img.date }}</h3>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="photos">
+      <FsLightbox :toggler="toggler" :slide="slide" :sources="[
+        require('./images/watercolour/spider.jpg'),
+        require('./images/watercolour/gwen.jpg'),
+        require('./images/watercolour/doggo.jpg'),
+        require('./images/watercolour/turtle.jpg'),
+        require('./images/watercolour/ironman.jpg'),
+        require('./images/watercolour/jv.jpg'),
+        require('./images/watercolour/yoda.jpg'),
+        require('./images/watercolour/hyuna.jpg'),
+      ]" />
+    </div>
+  </div>
 </template>
 
 <script>
 import HeroHeader from '../../components/Layout/HeroHeader.vue';
 import FsLightbox from "fslightbox-vue";
 import SlideTransition from '../../components/Layout/SlideTransition'
+import Watercolour from '../gallery/data/watercolour.json';
 
 export default {
   name: 'Watercolour',
-  title () {
-    return `Megan Nancy Jane Art — Watercolour`
+  title() {
+    return `MNJaRtz — Watercolour`
   },
   data() {
     return {
       index: null,
-      toggler: false
+      toggler: false,
+      slide: 1,
+      items: Watercolour,
     };
   },
   components: {
@@ -102,15 +82,30 @@ export default {
     SlideTransition
   },
   methods: {
+    filteredItems(column, columns) {
+      const self = this; // Enables us to pass this to the method
+      const total = this.items.length; // How many items
+      const gap = Math.ceil(total / columns); // How many per col
+      let top = (gap * column); // Top of the col
+      const bottom = ((top - gap)); // Bottom of the col
+      top -= 1; // Adjust top back down one
+      return self.items.filter(item =>
+        self.items.indexOf(item) >= bottom
+        && self.items.indexOf(item) <= top,
+      ); // Return the items for the given col
+    },
     setIndex(index) {
       this.index = index
+    },
+    openLightboxOnSlide: function (number) {
+      this.slide = number;
+      this.toggler = !this.toggler;
     }
   }
 }
 </script>
 
 <style>
-
 /*###########################################
 
 General Page Styles
@@ -119,10 +114,12 @@ General Page Styles
 
 #water {
   overflow-x: hidden;
+  background-color: white;
 }
 
 #water h2 {
   font-size: 1.2em;
+  color: black;
 }
 
 #water h3 {
@@ -168,7 +165,7 @@ Art Hover Styles
   transform: translate(-50%, -50%);
 }
 
-.text1 h3{
+.text1 h3 {
   white-space: nowrap;
 }
 
@@ -176,6 +173,7 @@ Art Hover Styles
   position: relative;
   width: 100%;
   box-shadow: 2px 2px 10px 0px rgba(68, 68, 68, .4);
+  margin: 30px 0;
 }
 
 
@@ -189,8 +187,8 @@ Image Grid Styles
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  padding: 5em 14vw;
-  margin-bottom: 5em;
+  margin: 5em auto;
+  max-width: 1200px;
 }
 
 /* Create three equal columns that sits next to each other */

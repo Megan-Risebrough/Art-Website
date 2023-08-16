@@ -1,57 +1,50 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import { BootstrapVue, IconsPlugin, NavbarPlugin, CarouselPlugin } from 'bootstrap-vue'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
 import FsLightbox from "fslightbox-vue";
 
 Vue.use(FsLightbox);
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-library.add(faBars)
+library.add(faBars, faShoppingCart);
 
-import VueSmoothScroll from 'vue2-smooth-scroll'
+import VueSmoothScroll from 'vue2-smooth-scroll';
 Vue.use(VueSmoothScroll, {
   duration: 600,
   updateHistory: false,
-})
+});
 
-import titleMixin from './mixins/titleMixin'
-Vue.mixin(titleMixin)
-
-
-import HeroHeader from './components/Layout/HeroHeader'
-Vue.use(HeroHeader)
+import titleMixin from './mixins/titleMixin';
+Vue.mixin(titleMixin);
 
 
-import { gsap } from "gsap"
-Vue.use(gsap)
+import HeroHeader from './components/Layout/HeroHeader';
+Vue.use(HeroHeader);
 
-Vue.component('font-awesome-icon', FontAwesomeIcon)
 
-import VuePageTransition from 'vue-page-transition'
-Vue.use(VuePageTransition)
+import { gsap } from "gsap";
+Vue.use(gsap);
 
-Vue.use(BootstrapVue)
-Vue.use(IconsPlugin)
-Vue.use(NavbarPlugin)
-Vue.use(CarouselPlugin)
+Vue.component('font-awesome-icon', FontAwesomeIcon);
 
-Vue.config.productionTip = false
+import VuePageTransition from 'vue-page-transition';
+Vue.use(VuePageTransition);
+
+Vue.config.productionTip = false;
 
 new Vue({
   render: h => h(App),
   data: {
-			load : false,
+    load: false,
   },
   router,
   methods: {
-    afterLeave () {
-      this.$root.$emit('triggerScroll')
+    afterLeave() {
+      this.$root.$emit('triggerScroll');
     }
   }
-}).$mount('#app')
+}).$mount('#app');

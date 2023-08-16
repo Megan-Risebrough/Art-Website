@@ -50,7 +50,7 @@ const router = new VueRouter({
       component: Contact,
       meta: { scrollToTop: true }
     },
-  ], 
+  ],
   scrollBehavior: function (to) {
     if (to.hash) {
       return {
@@ -65,4 +65,4 @@ const router = new VueRouter({
 new Vue({
   router,
   render: h => h(App),
-}).$mount('#app')
+}).$mount('#app');

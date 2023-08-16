@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Miles Morales",
+        "image": "spider.jpg",
+        "date": "2019-10-27"
+    },
+    {
+        "id": 2,
+        "name": "Spider-Gwen",
+        "image": "gwen.jpg",
+        "date": "2023-06-07"
+    },
+    {
+        "id": 3,
+        "name": "Golden Retriever",
+        "image": "doggo.jpg",
+        "date": "2019-08-15"
+    },
+    {
+        "id": 4,
+        "name": "Sea Turtle",
+        "image": "turtle.jpg",
+        "date": "2020-02-15"
+    },
+    {
+        "id": 5,
+        "name": "Iron Man",
+        "image": "ironman.jpg",
+        "date": "2019-08-01"
+    },
+    {
+        "id": 6,
+        "name": "Jonas Valančiūnas",
+        "image": "jv.jpg",
+        "date": "2019-05-13"
+    },
+    {
+        "id": 7,
+        "name": "Yoda",
+        "image": "yoda.jpg",
+        "date": "2020-04-19"
+    },
+    {
+        "id": 8,
+        "name": "HyunA",
+        "image": "hyuna.jpg",
+        "date": "2018-03-14"
+    }
+]

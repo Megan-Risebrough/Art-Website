@@ -14,11 +14,12 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/vue-fontawesome": "^2.0.2",
     "aos": "^2.3.4",
-    "bootstrap": "^4.5.3",
-    "bootstrap-vue": "^2.21.1",
+    "axios": "^1.4.0",
+    "bootstrap": "^4.6.2",
+    "bootstrap-vue": "^2.23.1",
     "core-js": "^3.6.5",
     "gsap": "^3.6.0",
-    "vue": "^2.6.12",
+    "vue": "^2.7.14",
     "vue-accordion": "^1.0.0",
     "vue-cool-lightbox": "^2.7.0",
     "vue-image-lightbox": "^7.2.0",
@@ -35,7 +36,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "fslightbox-vue": "^1.2.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.7.14"
   },
   "eslintConfig": {
     "root": true,

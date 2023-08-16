@@ -1,31 +1,48 @@
 <template>
- <div>
-   <slide-transition></slide-transition>
-   <hero-header
-    title="Gallery"
-    image='./images/header.jpg'
-    :style="{ background: `linear-gradient(to bottom, rgba(102, 251, 233, 0.47), rgba(102, 251, 233, 0.47)),` + 'url(' + require('./images/header.jpg') + ')',
-    backgroundPosition: 'center center',
-    backgroundSize: 'cover' }">
-   </hero-header>
-    <div id="explore">
-      <h2>Explore</h2>
-      <span class="icon"><a href="#mediums" v-smooth-scroll><font-awesome-icon :icon="myIcon" /></a></span>
-    </div>
+  <div>
+    <slide-transition></slide-transition>
+    <hero-header title="Gallery" image='./images/header.jpg' :style="{
+      background: `linear-gradient(to bottom, rgba(102, 251, 233, 0.47), rgba(102, 251, 233, 0.47)),` + 'url(' + require('./images/header.jpg') + ')',
+      backgroundPosition: 'center center',
+      backgroundSize: 'cover'
+    }">
+    </hero-header>
     <div id="relativity">
-      <div id="mediums">
-        <router-link to="/watercolour"><div class="medium" data-aos="fade-right" data-aos-once="true">
-          <h1>Watercolour</h1>
-          <img src="./images/watercolour.jpg" aria-hidden="true" alt="" />
-        </div></router-link>
-        <router-link to="/acrylic"><div class="medium" data-aos="fade-left" data-aos-once="true">
-          <img src="./images/acrylic.jpg" aria-hidden="true" alt="" />
-          <h1 id="lighter">Acrylic</h1>
-        </div></router-link>
-        <router-link to="/digital"><div class="medium" data-aos="fade-right" data-aos-once="true">
-          <h1>Digital</h1>
-          <img src="./images/digital.jpg" aria-hidden="true" alt="" />
-        </div></router-link>
+      <div class="mediums content-wrapper">
+        <div class="content-wrapper">
+          <div class="medium" data-aos="zoom-in" data-aos-once="true">
+            <router-link to="/watercolour">
+              <span class="med-icon"><font-awesome-icon :icon="water" /></span>
+              <h3>Watercolour</h3>
+              <p>
+                I have been working with watercolour for about {{ new Date().getFullYear() - 2015 }} years now. I use a
+                semi-realistic style, paired with black outlines and texture.
+              </p>
+            </router-link>
+          </div>
+          <div class="medium" data-aos="zoom-in" data-aos-once="true">
+            <router-link to="/acrylic">
+              <span class="med-icon"><font-awesome-icon :icon="palette" /></span>
+              <h3>Acrylic</h3>
+              <p>
+                I have been working with acrylics for about {{ new Date().getFullYear() - 2013 }} years now. I use a
+                realism style by utilizing the blending quality of the paints. I
+                prefer painting on rocks and think they make the perfect gift.
+              </p>
+            </router-link>
+          </div>
+          <div class="medium" data-aos="zoom-in" data-aos-once="true">
+            <router-link to="/digital">
+              <span class="med-icon"><font-awesome-icon :icon="laptop" /></span>
+              <h3>Digital</h3>
+              <p>
+                I have been working digitally for about {{ new Date().getFullYear() - 2016 }} years now. I use various
+                styles as this medium is very versatile. My two prominent styles are
+                realism and comic-like.
+              </p>
+            </router-link>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -33,18 +50,20 @@
 
 <script>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { faTint, faPalette, faLaptop } from '@fortawesome/free-solid-svg-icons'
 import HeroHeader from '../../components/Layout/HeroHeader.vue'
 import SlideTransition from '../../components/Layout/SlideTransition'
 
 export default {
   name: 'Gallery',
-  title () {
-    return `Megan Nancy Jane Art — Gallery`
+  title() {
+    return `MNJaRtz — Gallery`
   },
-  data () {
+  data() {
     return {
-      myIcon: faCaretDown
+      water: faTint,
+      palette: faPalette,
+      laptop: faLaptop
     }
   },
   components: {
@@ -57,121 +76,9 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Serif+Pro:ital,wght@0,200;0,300;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
-html {
-  scroll-behavior: smooth;
-}
-div{
-  overflow-x: hidden;
-}
-h1 {
-  font-family: 'Source Serif Pro', serif;
-  font-weight: bold;
-  font-size: 4.5em;
-  transition: 1s;
-  color: white;
-}
-h2 {
-  font-family: 'Source Serif Pro', serif;
-  text-align: center;
-  font-size: 3em;
-  color: white;
-}
-.icon {
-  font-size: 5em;
-  margin-left: 0.25em;
-  display: block;
-  text-align: center;
-
-  -webkit-animation: action 1s infinite alternate;
-  animation: action 1s infinite alternate;
-}
-@-webkit-keyframes action {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
-}
-@keyframes action {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
-}
-a, a:hover {
-  text-decoration: none;
-  color: white;
-}
-
-#explore {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #212529;
-  position: absolute;
-  right: 0px; bottom: 0px;
-  width: calc(100vw - 36em);
-}
 
 #relativity {
-  height: 100vh;
   position: relative;
-}
-
-#mediums {
-  position: absolute;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: white;
-}
-
-.medium {
-  display: flex;
-  align-items: flex-start;
-}
-
-.medium h1 {
-  font-family: 'PT Sans', sans-serif;
-  flex: 1 1 0;
-  font-size: 5em;
-  padding: 1em;
-  border-bottom: none;
-  background-color:black;
-  color: white;
-  font-weight: lighter;
-  max-width: 70%;
-}
-
-#lighter {
-  background-color: #212529;
-}
-
-.medium img {
-  flex: 1 1 0;
-  max-width: 30%;
-  height: 16em;
-  object-fit: cover;
-  filter: grayscale();
-  transition: 1s;
-}
-
-.medium:hover img {
-  filter: grayscale(0);
-  transition: 1s;
-}
-
-.medium:hover h1 {
-  background-color: rgba(0, 67, 101, 0.87);
-}
-#lighter:hover {
-  background-color: rgba(0, 67, 101, 0.87);
-}
-
-/* Responsive layout */
-@media screen and (max-width: 600px) {
-  .medium h1 {
-    font-size: 2em;
-  }
-  .medium img {
-    height: 6.4em;
-  }
+  z-index: 10;
 }
 </style>
