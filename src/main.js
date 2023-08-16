@@ -3,10 +3,20 @@ import App from './App.vue';
 import router from './router';
 import FsLightbox from "fslightbox-vue";
 
-Vue.use(router);
 Vue.use(FsLightbox);
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+library.add(faBars, faShoppingCart);
+
+import VueSmoothScroll from 'vue2-smooth-scroll';
+Vue.use(VueSmoothScroll, {
+  duration: 600,
+  updateHistory: false,
+});
 
 import titleMixin from './mixins/titleMixin';
 Vue.mixin(titleMixin);
