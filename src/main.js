@@ -36,6 +36,9 @@ Vue.use(VuePageTransition);
 
 Vue.config.productionTip = false;
 
+var urlPath = window.location.pathname;
+router.push({ path: urlPath });
+
 new Vue({
   render: h => h(App),
   data: {

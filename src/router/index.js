@@ -62,9 +62,6 @@ const router = new VueRouter({
   }
 })
 
-var urlPath = window.location.pathname;
-router.push({ path: urlPath });
-
 new Vue({
   router,
   render: h => h(App),
