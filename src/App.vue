@@ -12,7 +12,7 @@ import PageFooter from './components/Layout/PageFooter'
 
 export default {
   title() {
-    return `Megan Nancy Jane Art — Home`
+    return `MNJaRtz — Home`
   },
   components: {
     TopNavNew,
